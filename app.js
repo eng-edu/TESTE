@@ -4,11 +4,11 @@ const port = process.env.PORT || 3000
 var mysql      = require('mysql');
 
 var connection = mysql.createConnection({
-  host     : 'mysql642.umbler.com',
-  port: '41890',
-  user     : 'edu',
-  password : '6code384',
-  database : 'my_bd'
+  host: '191.252.193.192',
+  port: '3306',
+  user: 'root',
+  password: '6code384',
+  database: 'teste'
 });
  
 
@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
 app.get('/', function (req, res) {
     connection.connect();
  
-    executeSQL('select * from teste', function(results){
+    executeSQL('select * from tabela', function(results){
         res.send(results)
     })
 
